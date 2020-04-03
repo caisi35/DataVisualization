@@ -29,97 +29,41 @@
 </script>
 </head>
 <body>
-    <div id="ac43d6e5be514ecaae6e30a52939dc8e" style="width:800px;height:400px;"></div>
+    <div id="e3949c424c8b49d5924ccfbed49abd4b" style="width:800px;height:400px;"></div>
     <script type="text/javascript">
 
-var myChart_ac43d6e5be514ecaae6e30a52939dc8e = echarts.init(document.getElementById('ac43d6e5be514ecaae6e30a52939dc8e'), 'light', {renderer: 'canvas'});
+var myChart_e3949c424c8b49d5924ccfbed49abd4b = echarts.init(document.getElementById('e3949c424c8b49d5924ccfbed49abd4b'), 'light', {renderer: 'canvas'});
 
-var option_ac43d6e5be514ecaae6e30a52939dc8e = {
-    "series": [
-        {
-            "center": [
-                "60%",
-                "60%"
-            ],
-            "radius": [
-                "30%",
-                "80%"
-            ],
-            "type": "pie",
-            "name": "First",
-            "data": [
-                {
-                    "name": "\u91d1\u878d",
-                    "value": 172
-                },
-                {
-                    "name": "\u533b\u7597\u4fdd\u5065",
-                    "value": 136
-                },
-                {
-                    "name": "\u5e02\u573a\u4e1a",
-                    "value": 135
-                },
-                {
-                    "name": "\u96f6\u552e\u4e1a",
-                    "value": 101
-                },
-                {
-                    "name": "\u5236\u9020\u4e1a",
-                    "value": 80
-                },
-                {
-                    "name": "\u53f8\u6cd5",
-                    "value": 68
-                },
-                {
-                    "name": "\u5de5\u7a0b\u4e0e\u79d1\u5b66",
-                    "value": 50
-                },
-                {
-                    "name": "\u4fdd\u9669\u4e1a",
-                    "value": 29
-                },
-                {
-                    "name": "\u5176\u4ed6",
-                    "value": 41
-                }
-            ],
-            "seriesId": 2741590,
-            "label": {
-                "emphasis": {
-                    "formatter": "{b}: {d}%",
-                    "show": true,
-                    "textStyle": {
-                        "fontSize": 12
-                    }
-                },
-                "normal": {
-                    "formatter": "{b}: {d}%",
-                    "show": true,
-                    "position": "outside",
-                    "textStyle": {
-                        "fontSize": 12
-                    }
-                }
-            }
-        }
-    ],
+var option_e3949c424c8b49d5924ccfbed49abd4b = {
+    "series_id": 8964131,
     "animation": true,
     "title": [
         {
+            "top": "auto",
             "subtextStyle": {
                 "fontSize": 12
             },
             "text": "Annular Chart object for users interest",
+            "left": "left",
             "textStyle": {
                 "fontSize": 18
             },
-            "left": "left",
-            "top": "auto",
             "subtext": "The following is vote result.\nreaders are most interested in Finaene and Health care and marketing."
         }
     ],
+    "tooltip": {
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "backgroundColor": "rgba(50,50,50,0.7)",
+        "borderColor": "#333"
+    },
     "color": [
         "#c23531",
         "#2f4554",
@@ -147,11 +91,9 @@ var option_ac43d6e5be514ecaae6e30a52939dc8e = {
         "#918597",
         "#f6f5ec"
     ],
-    "series_id": 2741590,
     "legend": [
         {
             "selectedMode": "multiple",
-            "left": "right",
             "data": [
                 "\u91d1\u878d",
                 "\u533b\u7597\u4fdd\u5065",
@@ -163,29 +105,87 @@ var option_ac43d6e5be514ecaae6e30a52939dc8e = {
                 "\u4fdd\u9669\u4e1a",
                 "\u5176\u4ed6"
             ],
-            "show": true,
             "top": "top",
+            "left": "right",
+            "orient": "vertical",
+            "show": true,
             "textStyle": {
                 "fontSize": 12
-            },
-            "orient": "vertical"
+            }
         }
     ],
-    "tooltip": {
-        "borderColor": "#333",
-        "trigger": "item",
-        "axisPointer": {
-            "type": "line"
-        },
-        "backgroundColor": "rgba(50,50,50,0.7)",
-        "triggerOn": "mousemove|click",
-        "textStyle": {
-            "fontSize": 14
-        },
-        "borderWidth": 0
-    }
+    "series": [
+        {
+            "data": [
+                {
+                    "value": 172,
+                    "name": "\u91d1\u878d"
+                },
+                {
+                    "value": 136,
+                    "name": "\u533b\u7597\u4fdd\u5065"
+                },
+                {
+                    "value": 135,
+                    "name": "\u5e02\u573a\u4e1a"
+                },
+                {
+                    "value": 101,
+                    "name": "\u96f6\u552e\u4e1a"
+                },
+                {
+                    "value": 80,
+                    "name": "\u5236\u9020\u4e1a"
+                },
+                {
+                    "value": 68,
+                    "name": "\u53f8\u6cd5"
+                },
+                {
+                    "value": 50,
+                    "name": "\u5de5\u7a0b\u4e0e\u79d1\u5b66"
+                },
+                {
+                    "value": 29,
+                    "name": "\u4fdd\u9669\u4e1a"
+                },
+                {
+                    "value": 41,
+                    "name": "\u5176\u4ed6"
+                }
+            ],
+            "name": "First",
+            "label": {
+                "normal": {
+                    "formatter": "{b}: {d}%",
+                    "show": true,
+                    "position": "outside",
+                    "textStyle": {
+                        "fontSize": 12
+                    }
+                },
+                "emphasis": {
+                    "formatter": "{b}: {d}%",
+                    "show": true,
+                    "textStyle": {
+                        "fontSize": 12
+                    }
+                }
+            },
+            "center": [
+                "60%",
+                "60%"
+            ],
+            "type": "pie",
+            "seriesId": 8964131,
+            "radius": [
+                "30%",
+                "80%"
+            ]
+        }
+    ]
 };
-myChart_ac43d6e5be514ecaae6e30a52939dc8e.setOption(option_ac43d6e5be514ecaae6e30a52939dc8e);
+myChart_e3949c424c8b49d5924ccfbed49abd4b.setOption(option_e3949c424c8b49d5924ccfbed49abd4b);
 
 </script>
 </body>

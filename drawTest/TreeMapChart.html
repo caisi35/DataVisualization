@@ -29,65 +29,48 @@
 </script>
 </head>
 <body>
-    <div id="67232b2ef60e4ad587706f2102170378" style="width:1000px;height:600px;"></div>
+    <div id="54be3644c5894059a9638cc0009c1d99" style="width:1000px;height:600px;"></div>
     <script type="text/javascript">
 
-var myChart_67232b2ef60e4ad587706f2102170378 = echarts.init(document.getElementById('67232b2ef60e4ad587706f2102170378'), 'light', {renderer: 'canvas'});
+var myChart_54be3644c5894059a9638cc0009c1d99 = echarts.init(document.getElementById('54be3644c5894059a9638cc0009c1d99'), 'light', {renderer: 'canvas'});
 
-var option_67232b2ef60e4ad587706f2102170378 = {
-    "series_id": 7792969,
+var option_54be3644c5894059a9638cc0009c1d99 = {
     "animation": true,
-    "title": [
-        {
-            "textStyle": {
-                "fontSize": 18
-            },
-            "text": "World country GDP",
-            "subtextStyle": {
-                "fontSize": 12
-            },
-            "top": "auto",
-            "left": "auto"
-        }
-    ],
     "legend": [
         {
-            "show": true,
+            "textStyle": {
+                "fontSize": 12
+            },
             "data": [
                 "First"
             ],
-            "top": "top",
             "left": "center",
-            "selectedMode": "multiple",
-            "textStyle": {
-                "fontSize": 12
-            },
-            "orient": "horizontal"
+            "orient": "horizontal",
+            "top": "top",
+            "show": true,
+            "selectedMode": "multiple"
         }
     ],
     "series": [
         {
-            "visibleMin": 10,
             "label": {
                 "normal": {
-                    "show": true,
-                    "position": "inside",
                     "textStyle": {
                         "fontSize": 12
-                    }
+                    },
+                    "position": "inside",
+                    "show": true
                 },
                 "emphasis": {
-                    "show": true,
                     "textStyle": {
                         "fontSize": 12
-                    }
+                    },
+                    "show": true
                 }
             },
-            "type": "treemap",
+            "leafDepth": 1,
             "data": [
                 {
-                    "value": 0.3183,
-                    "name": "\u4e9a\u6d32",
                     "children": [
                         {
                             "value": 0.1503,
@@ -125,11 +108,11 @@ var option_67232b2ef60e4ad587706f2102170378 = {
                             "value": 0.0054,
                             "name": "\u4f0a\u6717"
                         }
-                    ]
+                    ],
+                    "value": 0.3183,
+                    "name": "\u4e9a\u6d32"
                 },
                 {
-                    "value": 0.2072,
-                    "name": "\u6b27\u6d32",
                     "children": [
                         {
                             "value": 0.0461,
@@ -171,11 +154,11 @@ var option_67232b2ef60e4ad587706f2102170378 = {
                             "value": 0.0066,
                             "name": "\u6ce2\u5170"
                         }
-                    ]
+                    ],
+                    "value": 0.2072,
+                    "name": "\u6b27\u6d32"
                 },
                 {
-                    "value": 0.0337,
-                    "name": "\u5357\u7f8e\u6d32",
                     "children": [
                         {
                             "value": 0.0257,
@@ -185,21 +168,21 @@ var option_67232b2ef60e4ad587706f2102170378 = {
                             "value": 0.008,
                             "name": "\u963f\u6839\u5ef7"
                         }
-                    ]
+                    ],
+                    "value": 0.0337,
+                    "name": "\u5357\u7f8e\u6d32"
                 },
                 {
-                    "value": 0.0173,
-                    "name": "\u5927\u6d0b\u6d32",
                     "children": [
                         {
                             "value": 0.0173,
                             "name": "\u6fb3\u5927\u5229\u4e9a"
                         }
-                    ]
+                    ],
+                    "value": 0.0173,
+                    "name": "\u5927\u6d0b\u6d32"
                 },
                 {
-                    "value": 0.2777,
-                    "name": "\u5317\u7f8e\u6d32",
                     "children": [
                         {
                             "value": 0.2426,
@@ -213,52 +196,22 @@ var option_67232b2ef60e4ad587706f2102170378 = {
                             "value": 0.0144,
                             "name": "\u58a8\u897f\u54e5"
                         }
-                    ]
+                    ],
+                    "value": 0.2777,
+                    "name": "\u5317\u7f8e\u6d32"
                 },
                 {
                     "value": 0.1449,
                     "name": "\u5176\u4ed6\u56fd\u5bb6"
                 }
             ],
-            "leafDepth": 1,
-            "seriesId": 7792969,
+            "visibleMin": 10,
             "drillDownIcon": "\u25b6",
+            "seriesId": 5581735,
+            "type": "treemap",
             "name": "First"
         }
     ],
-    "tooltip": {
-        "trigger": "item",
-        "backgroundColor": "rgba(50,50,50,0.7)",
-        "borderWidth": 0,
-        "axisPointer": {
-            "type": "line"
-        },
-        "triggerOn": "mousemove|click",
-        "textStyle": {
-            "fontSize": 14
-        },
-        "borderColor": "#333"
-    },
-    "toolbox": {
-        "show": true,
-        "feature": {
-            "restore": {
-                "title": "restore",
-                "show": true
-            },
-            "saveAsImage": {
-                "title": "save as image",
-                "show": true
-            },
-            "dataView": {
-                "title": "data view",
-                "show": true
-            }
-        },
-        "orient": "vertical",
-        "left": "95%",
-        "top": "center"
-    },
     "color": [
         "#c23531",
         "#2f4554",
@@ -285,9 +238,56 @@ var option_67232b2ef60e4ad587706f2102170378 = {
         "#6950a1",
         "#918597",
         "#f6f5ec"
-    ]
+    ],
+    "tooltip": {
+        "textStyle": {
+            "fontSize": 14
+        },
+        "triggerOn": "mousemove|click",
+        "borderColor": "#333",
+        "trigger": "item",
+        "backgroundColor": "rgba(50,50,50,0.7)",
+        "axisPointer": {
+            "type": "line"
+        },
+        "borderWidth": 0
+    },
+    "title": [
+        {
+            "textStyle": {
+                "fontSize": 18
+            },
+            "top": "auto",
+            "text": "World country GDP",
+            "subtextStyle": {
+                "fontSize": 12
+            },
+            "left": "auto"
+        }
+    ],
+    "toolbox": {
+        "orient": "vertical",
+        "top": "center",
+        "show": true,
+        "feature": {
+            "saveAsImage": {
+                "title": "save as image",
+                "show": true
+            },
+            "dataView": {
+                "title": "data view",
+                "show": true
+            },
+            "restore": {
+                "title": "restore",
+                "show": true
+            }
+        },
+        "left": "95%"
+    },
+    "series_id": 5581735
 };
-myChart_67232b2ef60e4ad587706f2102170378.setOption(option_67232b2ef60e4ad587706f2102170378);
+myChart_54be3644c5894059a9638cc0009c1d99.setOption(option_54be3644c5894059a9638cc0009c1d99);
 
 </script>
 </body>

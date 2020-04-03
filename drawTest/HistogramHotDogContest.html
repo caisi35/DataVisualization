@@ -29,103 +29,96 @@
 </script>
 </head>
 <body>
-    <div id="2980bc34d6b5497a9d141d2e34fe865f" style="width:800px;height:400px;"></div>
+    <div id="841d94887b1747a6a457bb44b0bdd495" style="width:800px;height:400px;"></div>
     <script type="text/javascript">
 
-var myChart_2980bc34d6b5497a9d141d2e34fe865f = echarts.init(document.getElementById('2980bc34d6b5497a9d141d2e34fe865f'), 'light', {renderer: 'canvas'});
+var myChart_841d94887b1747a6a457bb44b0bdd495 = echarts.init(document.getElementById('841d94887b1747a6a457bb44b0bdd495'), 'light', {renderer: 'canvas'});
 
-var option_2980bc34d6b5497a9d141d2e34fe865f = {
-    "xAxis": [
+var option_841d94887b1747a6a457bb44b0bdd495 = {
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597",
+        "#f6f5ec"
+    ],
+    "yAxis": [
         {
-            "axisTick": {
-                "alignWithLabel": false
+            "boundaryGap": true,
+            "inverse": false,
+            "splitLine": {
+                "show": true
             },
+            "nameLocation": "middle",
+            "type": "value",
             "axisLabel": {
-                "margin": 8,
                 "interval": "auto",
+                "formatter": "{value} ",
+                "margin": 8,
+                "rotate": 0,
                 "textStyle": {
                     "fontSize": 12
-                },
-                "rotate": 0
+                }
             },
-            "type": "category",
-            "nameGap": 25,
-            "nameLocation": "middle",
-            "nameTextStyle": {
-                "fontSize": 14
-            },
-            "splitLine": {
-                "show": false
-            },
-            "data": [
-                "1980",
-                "1981",
-                "1982",
-                "1983",
-                "1984",
-                "1985",
-                "1986",
-                "1987",
-                "1988",
-                "1989",
-                "1990",
-                "1991",
-                "1992",
-                "1993",
-                "1994",
-                "1995",
-                "1996",
-                "1997",
-                "1998",
-                "1999",
-                "2000",
-                "2001",
-                "2002",
-                "2003",
-                "2004",
-                "2005",
-                "2006",
-                "2007",
-                "2008",
-                "2009",
-                "2010"
-            ],
+            "show": true,
             "axisLine": {
                 "lineStyle": {
                     "width": 1
                 }
             },
-            "show": true,
-            "inverse": false,
-            "boundaryGap": true
+            "nameGap": 25,
+            "nameTextStyle": {
+                "fontSize": 14
+            },
+            "axisTick": {
+                "alignWithLabel": false
+            }
         }
     ],
-    "tooltip": {
-        "trigger": "item",
-        "borderColor": "#333",
-        "textStyle": {
-            "fontSize": 14
-        },
-        "axisPointer": {
-            "type": "line"
-        },
-        "backgroundColor": "rgba(50,50,50,0.7)",
-        "borderWidth": 0,
-        "triggerOn": "mousemove|click"
-    },
+    "legend": [
+        {
+            "left": "center",
+            "top": "top",
+            "data": [
+                "Winners Grade"
+            ],
+            "show": true,
+            "textStyle": {
+                "fontSize": 12
+            },
+            "orient": "horizontal",
+            "selectedMode": "multiple"
+        }
+    ],
     "series": [
         {
-            "name": "Winners Grade",
-            "markPoint": {
-                "data": []
-            },
             "label": {
                 "normal": {
                     "show": false,
+                    "position": "top",
                     "textStyle": {
                         "fontSize": 12
-                    },
-                    "position": "top"
+                    }
                 },
                 "emphasis": {
                     "show": true,
@@ -133,6 +126,13 @@ var option_2980bc34d6b5497a9d141d2e34fe865f = {
                         "fontSize": 12
                     }
                 }
+            },
+            "name": "Winners Grade",
+            "barCategoryGap": "20%",
+            "type": "bar",
+            "seriesId": 749266,
+            "markPoint": {
+                "data": []
             },
             "data": [
                 "9.1",
@@ -167,111 +167,97 @@ var option_2980bc34d6b5497a9d141d2e34fe865f = {
                 "68",
                 "54"
             ],
-            "type": "bar",
-            "seriesId": 5577337,
             "markLine": {
                 "data": []
-            },
-            "barCategoryGap": "20%"
+            }
         }
     ],
-    "yAxis": [
+    "tooltip": {
+        "axisPointer": {
+            "type": "line"
+        },
+        "triggerOn": "mousemove|click",
+        "borderColor": "#333",
+        "borderWidth": 0,
+        "backgroundColor": "rgba(50,50,50,0.7)",
+        "trigger": "item",
+        "textStyle": {
+            "fontSize": 14
+        }
+    },
+    "series_id": 749266,
+    "xAxis": [
         {
+            "boundaryGap": true,
+            "axisLabel": {
+                "interval": "auto",
+                "margin": 8,
+                "rotate": 70,
+                "textStyle": {
+                    "fontSize": 12
+                }
+            },
+            "nameLocation": "middle",
+            "type": "category",
+            "inverse": false,
             "axisTick": {
                 "alignWithLabel": false
             },
             "splitLine": {
-                "show": true
+                "show": false
             },
-            "inverse": false,
+            "nameGap": 25,
+            "show": true,
             "axisLine": {
                 "lineStyle": {
                     "width": 1
                 }
             },
-            "type": "value",
-            "show": true,
             "nameTextStyle": {
                 "fontSize": 14
             },
-            "nameGap": 25,
-            "nameLocation": "middle",
-            "boundaryGap": true,
-            "axisLabel": {
-                "margin": 8,
-                "interval": "auto",
-                "textStyle": {
-                    "fontSize": 12
-                },
-                "formatter": "{value} ",
-                "rotate": 0
-            }
-        }
-    ],
-    "series_id": 5577337,
-    "legend": [
-        {
-            "selectedMode": "multiple",
-            "top": "top",
-            "textStyle": {
-                "fontSize": 12
-            },
-            "left": "center",
-            "show": true,
             "data": [
-                "Winners Grade"
-            ],
-            "orient": "horizontal"
+                "1980",
+                "1981",
+                "1982",
+                "1983",
+                "1984",
+                "1985",
+                "1986",
+                "1987",
+                "1988",
+                "1989",
+                "1990",
+                "1991",
+                "1992",
+                "1993",
+                "1994",
+                "1995",
+                "1996",
+                "1997",
+                "1998",
+                "1999",
+                "2000",
+                "2001",
+                "2002",
+                "2003",
+                "2004",
+                "2005",
+                "2006",
+                "2007",
+                "2008",
+                "2009",
+                "2010"
+            ]
         }
-    ],
-    "color": [
-        "#c23531",
-        "#2f4554",
-        "#61a0a8",
-        "#d48265",
-        "#749f83",
-        "#ca8622",
-        "#bda29a",
-        "#6e7074",
-        "#546570",
-        "#c4ccd3",
-        "#f05b72",
-        "#ef5b9c",
-        "#f47920",
-        "#905a3d",
-        "#fab27b",
-        "#2a5caa",
-        "#444693",
-        "#726930",
-        "#b2d235",
-        "#6d8346",
-        "#ac6767",
-        "#1d953f",
-        "#6950a1",
-        "#918597",
-        "#f6f5ec"
     ],
     "animation": true,
-    "title": [
-        {
-            "text": "Histogram",
-            "top": "auto",
-            "textStyle": {
-                "fontSize": 18
-            },
-            "subtextStyle": {
-                "fontSize": 12
-            },
-            "left": "auto"
-        }
-    ],
     "toolbox": {
         "show": true,
+        "left": "95%",
+        "top": "center",
+        "orient": "vertical",
         "feature": {
-            "restore": {
-                "show": true,
-                "title": "restore"
-            },
             "dataView": {
                 "show": true,
                 "title": "data view"
@@ -279,14 +265,28 @@ var option_2980bc34d6b5497a9d141d2e34fe865f = {
             "saveAsImage": {
                 "show": true,
                 "title": "save as image"
+            },
+            "restore": {
+                "show": true,
+                "title": "restore"
             }
-        },
-        "orient": "vertical",
-        "top": "center",
-        "left": "95%"
-    }
+        }
+    },
+    "title": [
+        {
+            "left": "auto",
+            "top": "auto",
+            "subtextStyle": {
+                "fontSize": 12
+            },
+            "text": "Histogram",
+            "textStyle": {
+                "fontSize": 18
+            }
+        }
+    ]
 };
-myChart_2980bc34d6b5497a9d141d2e34fe865f.setOption(option_2980bc34d6b5497a9d141d2e34fe865f);
+myChart_841d94887b1747a6a457bb44b0bdd495.setOption(option_841d94887b1747a6a457bb44b0bdd495);
 
 </script>
 </body>

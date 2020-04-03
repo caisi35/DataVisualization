@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 x_data = []
 y_data = []
-with open("/home/caisi/Downloads/world-population.csv") as f:
+with open("../data/world-population.csv") as f:
     data = csv.reader(f)
     for data_i in data:
         if data.line_num != 1:

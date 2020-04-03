@@ -29,204 +29,88 @@
 </script>
 </head>
 <body>
-    <div id="aadb3260676649fdb13034b0961159b4" style="width:800px;height:400px;"></div>
+    <div id="152387ec0e8f4ef89513fed153d3a681" style="width:800px;height:400px;"></div>
     <script type="text/javascript">
 
-var myChart_aadb3260676649fdb13034b0961159b4 = echarts.init(document.getElementById('aadb3260676649fdb13034b0961159b4'), 'light', {renderer: 'canvas'});
+var myChart_152387ec0e8f4ef89513fed153d3a681 = echarts.init(document.getElementById('152387ec0e8f4ef89513fed153d3a681'), 'light', {renderer: 'canvas'});
 
-var option_aadb3260676649fdb13034b0961159b4 = {
-    "series": [
+var option_152387ec0e8f4ef89513fed153d3a681 = {
+    "title": [
         {
-            "stack": "stack_200729",
-            "name": "First",
-            "data": [
-                "25",
-                "50",
-                "50.5",
-                "44.5",
-                "53.5",
-                "49",
-                "54",
-                "66",
-                "59",
-                "68",
-                "54"
-            ],
-            "markPoint": {
-                "data": []
+            "subtextStyle": {
+                "fontSize": 12
             },
-            "label": {
-                "emphasis": {
-                    "show": true,
-                    "textStyle": {
-                        "fontSize": 12
-                    }
-                },
-                "normal": {
-                    "show": false,
-                    "position": "top",
-                    "textStyle": {
-                        "fontSize": 12
-                    }
-                }
+            "text": "Stack Bar",
+            "textStyle": {
+                "fontSize": 18
             },
-            "seriesId": 200729,
-            "barCategoryGap": "20%",
-            "markLine": {
-                "data": []
-            },
-            "type": "bar"
-        },
+            "left": "auto",
+            "top": "auto"
+        }
+    ],
+    "legend": [
         {
-            "stack": "stack_200729",
-            "name": "Second",
+            "orient": "horizontal",
+            "selectedMode": "multiple",
+            "top": "top",
+            "left": "center",
+            "textStyle": {
+                "fontSize": 12
+            },
+            "show": true,
             "data": [
-                "24",
-                "31",
-                "26",
-                "30.5",
-                "38",
-                "37",
-                "52",
-                "63",
-                "59",
-                "64.5",
-                "43"
-            ],
-            "markPoint": {
-                "data": []
-            },
-            "label": {
-                "emphasis": {
-                    "show": true,
-                    "textStyle": {
-                        "fontSize": 12
-                    }
-                },
-                "normal": {
-                    "show": false,
-                    "position": "top",
-                    "textStyle": {
-                        "fontSize": 12
-                    }
-                }
-            },
-            "seriesId": 200729,
-            "barCategoryGap": "20%",
-            "markLine": {
-                "data": []
-            },
-            "type": "bar"
-        },
-        {
-            "stack": "stack_200729",
-            "name": "Third",
-            "data": [
-                "22",
-                "23.5",
-                "25.5",
-                "29.5",
-                "32",
-                "32",
-                "37",
-                "49",
-                "42",
-                "55",
-                "37"
-            ],
-            "markPoint": {
-                "data": []
-            },
-            "label": {
-                "emphasis": {
-                    "show": true,
-                    "textStyle": {
-                        "fontSize": 12
-                    }
-                },
-                "normal": {
-                    "show": false,
-                    "position": "top",
-                    "textStyle": {
-                        "fontSize": 12
-                    }
-                }
-            },
-            "seriesId": 200729,
-            "barCategoryGap": "20%",
-            "markLine": {
-                "data": []
-            },
-            "type": "bar"
+                "First",
+                "Second",
+                "Third"
+            ]
         }
     ],
     "yAxis": [
         {
+            "boundaryGap": true,
+            "axisTick": {
+                "alignWithLabel": false
+            },
+            "splitLine": {
+                "show": true
+            },
             "axisLabel": {
-                "rotate": 0,
                 "interval": "auto",
+                "rotate": 0,
+                "formatter": "{value} ",
                 "margin": 8,
                 "textStyle": {
                     "fontSize": 12
-                },
-                "formatter": "{value} "
+                }
             },
-            "show": true,
-            "type": "value",
+            "nameGap": 25,
             "axisLine": {
                 "lineStyle": {
                     "width": 1
                 }
             },
-            "splitLine": {
-                "show": true
-            },
-            "inverse": false,
-            "axisTick": {
-                "alignWithLabel": false
-            },
-            "nameGap": 25,
-            "boundaryGap": true,
             "nameLocation": "middle",
             "nameTextStyle": {
                 "fontSize": 14
-            }
+            },
+            "type": "value",
+            "show": true,
+            "inverse": false
         }
     ],
-    "toolbox": {
-        "orient": "vertical",
-        "top": "center",
-        "show": true,
-        "feature": {
-            "restore": {
-                "show": true,
-                "title": "restore"
-            },
-            "saveAsImage": {
-                "show": true,
-                "title": "save as image"
-            },
-            "dataView": {
-                "show": true,
-                "title": "data view"
-            }
-        },
-        "left": "95%"
-    },
     "tooltip": {
         "borderColor": "#333",
-        "triggerOn": "mousemove|click",
-        "borderWidth": 0,
-        "backgroundColor": "rgba(50,50,50,0.7)",
         "axisPointer": {
             "type": "line"
         },
+        "borderWidth": 0,
+        "backgroundColor": "rgba(50,50,50,0.7)",
+        "trigger": "item",
         "textStyle": {
             "fontSize": 14
         },
-        "trigger": "item"
+        "triggerOn": "mousemove|click"
     },
-    "series_id": 200729,
     "color": [
         "#c23531",
         "#2f4554",
@@ -254,50 +138,173 @@ var option_aadb3260676649fdb13034b0961159b4 = {
         "#918597",
         "#f6f5ec"
     ],
-    "title": [
-        {
-            "top": "auto",
-            "text": "Stack Bar",
-            "left": "auto",
-            "subtextStyle": {
-                "fontSize": 12
+    "toolbox": {
+        "left": "95%",
+        "orient": "vertical",
+        "show": true,
+        "feature": {
+            "saveAsImage": {
+                "show": true,
+                "title": "save as image"
             },
-            "textStyle": {
-                "fontSize": 18
+            "restore": {
+                "show": true,
+                "title": "restore"
+            },
+            "dataView": {
+                "show": true,
+                "title": "data view"
             }
-        }
-    ],
-    "legend": [
+        },
+        "top": "center"
+    },
+    "series": [
         {
-            "orient": "horizontal",
-            "show": true,
+            "name": "First",
+            "stack": "stack_3525812",
+            "barCategoryGap": "20%",
+            "label": {
+                "emphasis": {
+                    "show": true,
+                    "textStyle": {
+                        "fontSize": 12
+                    }
+                },
+                "normal": {
+                    "position": "top",
+                    "show": false,
+                    "textStyle": {
+                        "fontSize": 12
+                    }
+                }
+            },
             "data": [
-                "First",
-                "Second",
-                "Third"
+                "25",
+                "50",
+                "50.5",
+                "44.5",
+                "53.5",
+                "49",
+                "54",
+                "66",
+                "59",
+                "68",
+                "54"
             ],
-            "left": "center",
-            "top": "top",
-            "selectedMode": "multiple",
-            "textStyle": {
-                "fontSize": 12
-            }
+            "markPoint": {
+                "data": []
+            },
+            "markLine": {
+                "data": []
+            },
+            "type": "bar",
+            "seriesId": 3525812
+        },
+        {
+            "name": "Second",
+            "stack": "stack_3525812",
+            "barCategoryGap": "20%",
+            "label": {
+                "emphasis": {
+                    "show": true,
+                    "textStyle": {
+                        "fontSize": 12
+                    }
+                },
+                "normal": {
+                    "position": "top",
+                    "show": false,
+                    "textStyle": {
+                        "fontSize": 12
+                    }
+                }
+            },
+            "data": [
+                "24",
+                "31",
+                "26",
+                "30.5",
+                "38",
+                "37",
+                "52",
+                "63",
+                "59",
+                "64.5",
+                "43"
+            ],
+            "markPoint": {
+                "data": []
+            },
+            "markLine": {
+                "data": []
+            },
+            "type": "bar",
+            "seriesId": 3525812
+        },
+        {
+            "name": "Third",
+            "stack": "stack_3525812",
+            "barCategoryGap": "20%",
+            "label": {
+                "emphasis": {
+                    "show": true,
+                    "textStyle": {
+                        "fontSize": 12
+                    }
+                },
+                "normal": {
+                    "position": "top",
+                    "show": false,
+                    "textStyle": {
+                        "fontSize": 12
+                    }
+                }
+            },
+            "data": [
+                "22",
+                "23.5",
+                "25.5",
+                "29.5",
+                "32",
+                "32",
+                "37",
+                "49",
+                "42",
+                "55",
+                "37"
+            ],
+            "markPoint": {
+                "data": []
+            },
+            "markLine": {
+                "data": []
+            },
+            "type": "bar",
+            "seriesId": 3525812
         }
     ],
     "xAxis": [
         {
-            "show": true,
-            "type": "category",
-            "splitLine": {
-                "show": false
+            "axisTick": {
+                "alignWithLabel": false
             },
-            "nameGap": 25,
+            "axisLine": {
+                "lineStyle": {
+                    "width": 1
+                }
+            },
+            "nameLocation": "middle",
             "nameTextStyle": {
                 "fontSize": 14
             },
+            "type": "category",
+            "boundaryGap": true,
+            "splitLine": {
+                "show": false
+            },
             "axisLabel": {
-                "rotate": 0,
                 "interval": "auto",
+                "rotate": 0,
                 "margin": 8,
                 "textStyle": {
                     "fontSize": 12
@@ -316,22 +323,15 @@ var option_aadb3260676649fdb13034b0961159b4 = {
                 "2009",
                 "2010"
             ],
-            "axisLine": {
-                "lineStyle": {
-                    "width": 1
-                }
-            },
-            "inverse": false,
-            "axisTick": {
-                "alignWithLabel": false
-            },
-            "boundaryGap": true,
-            "nameLocation": "middle"
+            "nameGap": 25,
+            "show": true,
+            "inverse": false
         }
     ],
-    "animation": true
+    "animation": true,
+    "series_id": 3525812
 };
-myChart_aadb3260676649fdb13034b0961159b4.setOption(option_aadb3260676649fdb13034b0961159b4);
+myChart_152387ec0e8f4ef89513fed153d3a681.setOption(option_152387ec0e8f4ef89513fed153d3a681);
 
 </script>
 </body>

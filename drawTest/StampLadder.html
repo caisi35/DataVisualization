@@ -29,195 +29,82 @@
 </script>
 </head>
 <body>
-    <div id="d09869e2c7274084a34d5f5153154a57" style="width:800px;height:400px;"></div>
+    <div id="d5a67a84fcff4cf78e7fef9326970d12" style="width:800px;height:400px;"></div>
     <script type="text/javascript">
 
-var myChart_d09869e2c7274084a34d5f5153154a57 = echarts.init(document.getElementById('d09869e2c7274084a34d5f5153154a57'), 'light', {renderer: 'canvas'});
+var myChart_d5a67a84fcff4cf78e7fef9326970d12 = echarts.init(document.getElementById('d5a67a84fcff4cf78e7fef9326970d12'), 'light', {renderer: 'canvas'});
 
-var option_d09869e2c7274084a34d5f5153154a57 = {
-    "tooltip": {
-        "borderWidth": 0,
-        "axisPointer": {
-            "type": "line"
-        },
-        "backgroundColor": "rgba(50,50,50,0.7)",
-        "borderColor": "#333",
-        "trigger": "item",
-        "triggerOn": "mousemove|click",
-        "textStyle": {
-            "fontSize": 14
-        }
-    },
-    "xAxis": [
+var option_d5a67a84fcff4cf78e7fef9326970d12 = {
+    "legend": [
         {
-            "axisLabel": {
-                "margin": 8,
-                "interval": "auto",
-                "rotate": 0,
-                "textStyle": {
-                    "fontSize": 12
-                }
-            },
-            "axisLine": {
-                "lineStyle": {
-                    "width": 1
-                }
-            },
-            "nameGap": 25,
-            "inverse": false,
-            "data": [
-                "1995",
-                "1996",
-                "1997",
-                "1998",
-                "1999",
-                "2000",
-                "2001",
-                "2002",
-                "2003",
-                "2004",
-                "2005",
-                "2006",
-                "2007",
-                "2008",
-                "2009"
-            ],
+            "top": "top",
             "show": true,
-            "nameTextStyle": {
-                "fontSize": 14
+            "left": "center",
+            "selectedMode": "multiple",
+            "orient": "horizontal",
+            "textStyle": {
+                "fontSize": 12
             },
-            "axisTick": {
-                "alignWithLabel": false
-            },
-            "splitLine": {
-                "show": false
-            },
-            "nameLocation": "middle",
-            "type": "category",
-            "boundaryGap": true
+            "data": [
+                "Price"
+            ]
         }
     ],
     "animation": true,
-    "legend": [
-        {
-            "orient": "horizontal",
-            "top": "top",
-            "selectedMode": "multiple",
-            "data": [
-                "Price"
-            ],
-            "show": true,
-            "textStyle": {
-                "fontSize": 12
-            },
-            "left": "center"
-        }
-    ],
-    "color": [
-        "#c23531",
-        "#2f4554",
-        "#61a0a8",
-        "#d48265",
-        "#749f83",
-        "#ca8622",
-        "#bda29a",
-        "#6e7074",
-        "#546570",
-        "#c4ccd3",
-        "#f05b72",
-        "#ef5b9c",
-        "#f47920",
-        "#905a3d",
-        "#fab27b",
-        "#2a5caa",
-        "#444693",
-        "#726930",
-        "#b2d235",
-        "#6d8346",
-        "#ac6767",
-        "#1d953f",
-        "#6950a1",
-        "#918597",
-        "#f6f5ec"
-    ],
     "yAxis": [
         {
-            "max": 0.45,
+            "splitLine": {
+                "show": true
+            },
+            "type": "value",
+            "show": true,
+            "nameGap": 25,
+            "min": 0.3,
+            "axisLabel": {
+                "rotate": 0,
+                "formatter": "{value} ",
+                "margin": 8,
+                "interval": "auto",
+                "textStyle": {
+                    "fontSize": 12
+                }
+            },
             "axisTick": {
                 "alignWithLabel": false
             },
-            "min": 0.3,
+            "max": 0.45,
+            "boundaryGap": true,
+            "nameLocation": "middle",
+            "inverse": false,
             "axisLine": {
                 "lineStyle": {
                     "width": 1
                 }
             },
-            "nameGap": 25,
-            "show": true,
-            "inverse": false,
             "nameTextStyle": {
                 "fontSize": 14
-            },
-            "axisLabel": {
-                "margin": 8,
-                "interval": "auto",
-                "formatter": "{value} ",
-                "rotate": 0,
-                "textStyle": {
-                    "fontSize": 12
-                }
-            },
-            "splitLine": {
-                "show": true
-            },
-            "nameLocation": "middle",
-            "type": "value",
-            "boundaryGap": true
-        }
-    ],
-    "series_id": 2842576,
-    "title": [
-        {
-            "left": "auto",
-            "top": "auto",
-            "text": "American stamp ladder",
-            "textStyle": {
-                "fontSize": 18
-            },
-            "subtextStyle": {
-                "fontSize": 12
             }
         }
     ],
-    "toolbox": {
-        "orient": "vertical",
-        "top": "center",
-        "show": true,
-        "feature": {
-            "restore": {
-                "title": "restore",
-                "show": true
-            },
-            "dataView": {
-                "title": "data view",
-                "show": true
-            },
-            "saveAsImage": {
-                "title": "save as image",
-                "show": true
-            }
+    "tooltip": {
+        "axisPointer": {
+            "type": "line"
         },
-        "left": "95%"
+        "borderWidth": 0,
+        "backgroundColor": "rgba(50,50,50,0.7)",
+        "trigger": "item",
+        "textStyle": {
+            "fontSize": 14
+        },
+        "triggerOn": "mousemove|click",
+        "borderColor": "#333"
     },
     "series": [
         {
-            "markLine": {
-                "data": []
-            },
-            "symbolSize": 4,
-            "areaStyle": {
-                "opacity": 0
-            },
+            "seriesId": 1514307,
+            "smooth": false,
+            "type": "line",
+            "symbol": "emptyCircle",
             "data": [
                 [
                     "1995",
@@ -280,43 +167,156 @@ var option_d09869e2c7274084a34d5f5153154a57 = {
                     0.44
                 ]
             ],
-            "smooth": false,
-            "symbol": "emptyCircle",
-            "showSymbol": true,
-            "name": "Price",
-            "label": {
-                "emphasis": {
-                    "show": true,
-                    "textStyle": {
-                        "fontSize": 12
-                    }
-                },
-                "normal": {
-                    "position": "top",
-                    "show": true,
-                    "textStyle": {
-                        "fontSize": 12
-                    }
-                }
+            "areaStyle": {
+                "opacity": 0
             },
+            "name": "Price",
+            "showSymbol": true,
+            "step": true,
+            "symbolSize": 4,
             "lineStyle": {
                 "normal": {
-                    "opacity": 1,
+                    "type": "solid",
                     "width": 1,
                     "curveness": 0,
-                    "type": "solid"
+                    "opacity": 1
                 }
             },
-            "step": true,
             "markPoint": {
                 "data": []
             },
-            "seriesId": 2842576,
-            "type": "line"
+            "label": {
+                "emphasis": {
+                    "textStyle": {
+                        "fontSize": 12
+                    },
+                    "show": true
+                },
+                "normal": {
+                    "textStyle": {
+                        "fontSize": 12
+                    },
+                    "show": true,
+                    "position": "top"
+                }
+            },
+            "markLine": {
+                "data": []
+            }
         }
+    ],
+    "toolbox": {
+        "top": "center",
+        "left": "95%",
+        "orient": "vertical",
+        "show": true,
+        "feature": {
+            "saveAsImage": {
+                "show": true,
+                "title": "save as image"
+            },
+            "restore": {
+                "show": true,
+                "title": "restore"
+            },
+            "dataView": {
+                "show": true,
+                "title": "data view"
+            }
+        }
+    },
+    "xAxis": [
+        {
+            "splitLine": {
+                "show": false
+            },
+            "type": "category",
+            "show": true,
+            "nameGap": 25,
+            "data": [
+                "1995",
+                "1996",
+                "1997",
+                "1998",
+                "1999",
+                "2000",
+                "2001",
+                "2002",
+                "2003",
+                "2004",
+                "2005",
+                "2006",
+                "2007",
+                "2008",
+                "2009"
+            ],
+            "axisLabel": {
+                "rotate": 0,
+                "textStyle": {
+                    "fontSize": 12
+                },
+                "margin": 8,
+                "interval": "auto"
+            },
+            "axisTick": {
+                "alignWithLabel": false
+            },
+            "boundaryGap": true,
+            "nameLocation": "middle",
+            "inverse": false,
+            "axisLine": {
+                "lineStyle": {
+                    "width": 1
+                }
+            },
+            "nameTextStyle": {
+                "fontSize": 14
+            }
+        }
+    ],
+    "series_id": 1514307,
+    "title": [
+        {
+            "top": "auto",
+            "subtextStyle": {
+                "fontSize": 12
+            },
+            "textStyle": {
+                "fontSize": 18
+            },
+            "left": "auto",
+            "text": "American stamp ladder"
+        }
+    ],
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597",
+        "#f6f5ec"
     ]
 };
-myChart_d09869e2c7274084a34d5f5153154a57.setOption(option_d09869e2c7274084a34d5f5153154a57);
+myChart_d5a67a84fcff4cf78e7fef9326970d12.setOption(option_d5a67a84fcff4cf78e7fef9326970d12);
 
 </script>
 </body>
