@@ -20,6 +20,8 @@ def stack_bar2():
     for i in range(13):
         bar.add(name=name[i], x_axis=x_axis, y_axis=y_axis[i], **style, is_toolbox_show=False)
     return bar
+
+
 if __name__ == '__main__':
     bar = stack_bar2()
     bar.render("StackBar2.html")

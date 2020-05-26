@@ -2,15 +2,15 @@ from pyecharts import Bar, Line, Polar
 import csv
 
 
-def hot_dog_polar_hcs():
-    polar_hcs = Polar('各年度热狗大胃王比赛前三名成绩-黄彩思', height=600)
+def hot_dog_polar_lzx():
+    polar_lzx = Polar('各年度热狗大胃王比赛前三名成绩-李兆旭', height=600)
     with open('../data/hot-dog-places.csv') as f:
-        data_hcs = list(csv.reader(f))
-    style_hcs = dict(type='barAngle', legend_orient='vertical', legend_pos='right')
-    polar_hcs.add("First", angle_data=data_hcs[0], data=data_hcs[1], is_stack=True, **style_hcs)
-    polar_hcs.add("Second", angle_data=data_hcs[0], data=data_hcs[2], is_stack=True, **style_hcs)
-    polar_hcs.add("Third", angle_data=data_hcs[0], data=data_hcs[3], is_stack=True, **style_hcs)
-    polar_hcs.render('hot-dog-polar.html')
+        data_lzx = list(csv.reader(f))
+    style_lzx = dict(type='barAngle', legend_orient='vertical', legend_pos='right')
+    polar_lzx.add("First", angle_data=data_lzx[0], data=data_lzx[1], is_stack=True, **style_lzx)
+    polar_lzx.add("Second", angle_data=data_lzx[0], data=data_lzx[2], is_stack=True, **style_lzx)
+    polar_lzx.add("Third", angle_data=data_lzx[0], data=data_lzx[3], is_stack=True, **style_lzx)
+    polar_lzx.render('hot-dog-polar.html')
 
 
 def stack_bar():
@@ -32,6 +32,6 @@ def stack_bar():
 
 
 if __name__ == '__main__':
-    hot_dog_polar_hcs()
+    hot_dog_polar_lzx()
     # bar, line = stack_bar()
     # bar.render("stackTopThree.html")
