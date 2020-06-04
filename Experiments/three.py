@@ -43,7 +43,7 @@ for k,v in data_dic.items():
     x.append(k)
 x.append(57)
 
-plt.hist(last_data, bins=x, edgecolor='k')
+plt.hist(last_data, bins=x, edgecolor='k', normed=True)
 kde = mlab.GaussianKDE(last_data)
 x2 = np.linspace(min(last_data), max(last_data), 1000)
 plt.plot(x2, kde(x2), 'g-', linewidth=2)
