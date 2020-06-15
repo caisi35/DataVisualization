@@ -6,7 +6,7 @@ from pyecharts_javascripthon.api import TRANSLATOR
 
 # Create your views here.
 REMOTE_HOST = "./static/js/map/province"
-HOST = "./static/js/assets/js"
+HOST = "https://pyecharts.github.io/assets/js"
 
 
 def index(request):
