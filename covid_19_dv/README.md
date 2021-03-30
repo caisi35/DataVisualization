@@ -1,3 +1,4 @@
+![image](https://github.com/caisi35/DataVisualization/blob/master/images/covid_19_dv_screenshot.png)
 ### 将数据导入mysql数据库
  1.创建visual_db_2017数据库  
  create database visual_db_2017  

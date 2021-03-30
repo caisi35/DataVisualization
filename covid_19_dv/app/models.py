@@ -3,7 +3,7 @@ from pymysql import Connect
 
 class db(object):
     def __init__(self):
-        self.conn = Connect(host='localhost', user='root', password='root', database='visual_db_2017', port=3306)
+        self.conn = Connect(host='mysql', user='root', password='root', database='visual_db_2017', port=3306)
 
     def get_cur(self, sql):
         """
