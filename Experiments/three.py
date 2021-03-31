@@ -50,4 +50,3 @@ plt.plot(x2, kde(x2), 'g-', linewidth=2)
 plt.xlabel('出生率')
 plt.ylabel('频率')
 plt.show()
-
