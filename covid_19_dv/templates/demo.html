@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新冠肺炎疫情</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="{% static 'js/echarts.js' %}"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div id="mycharts1" class="col-4" style="height: 400px;width: 600px;"></div>
+        <div id="mycharts2" class="col-4"></div>
+        <div id="mycharts3" class="col-4"></div>
+    </div>
+</div>
+<script>
+    myechart = echarts.init(document.getElementById('mycharts1'));
+    option = {
+    title: {
+        text: '二月全国新增确诊人数',
+        subtext: '13号数据暂时缺失'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['确诊人数']
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: {{ confirmed_date }}
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value}'
+        }
+    },
+    series: [
+        {
+            name: '确诊人数',
+            type: 'line',
+            data: {{ confirmed_count }},
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            }
+        },
+
+    ]
+};
+    myechart.setOption(option);
+</script>
+<script crossorigin="anonymous" integrity="sha384-LVoNJ6yst/aLxKvxwp6s2GAabqPczfWh6xzm38S/YtjUyZ+3aTKOnD/OJVGYLZDl"
+        src="https://lib.baomitu.com/jquery/3.5.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

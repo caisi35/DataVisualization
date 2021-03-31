@@ -1,0 +1,523 @@
+﻿<!doctype html>
+<meta charset="utf-8">
+<title>新冠肺炎疫情</title>
+{% load static %}
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<script src="{% static 'js/echarts.min.js' %}" charset="utf-8"></script>
+<script src="{% static 'js/jquery-3.2.0.min.js' %}" charset="utf-8"></script>
+<script src="{% static 'js/china.js' %}"></script>
+<script src="{% static 'js/map/china-contour.js' %}"></script>
+<script src="{% static 'js/map/china.js' %}"></script>
+{% for jsfile_name in script_list %}
+    <script src="{{ host }}/{{ jsfile_name }}.js"></script>
+{% endfor %}
+<body>
+<div class="wpbox">
+    <div class="bnt center-block">
+        <div class="title-div"><h1 class="tith1 fl">广西疫情可视化平台</h1></div>
+    </div>
+    <!-- bnt end -->
+    <div class="left1">
+        <div class="aleftboxttop pt1"><h2 class="tith2">广西各地市的累计确诊人数</h2>
+            <div class="lefttoday_tit" style=" height:8%"><p class="fl">地区：广西</p>
+                <p class="fm">周期：每日</p>
+                <p class="fr"></p></div>
+            <div id="gx_cc_pie" class="tlbox"></div>
+
+            <!-- lefttoday_number end -->
+        </div>
+        <div class="aleftboxtmidd">
+            <h2 class="tith2 pt2">2月广西每天的新增确诊人数</h2>
+            <div class="lefttoday_tit" style=" height:8%"><p class="fl">地区：广西</p>
+                <p class="fm">周期：每日</p>
+                <p class="fr"></p></div>
+            <div id="gx_confirmed" class="tlbox"></div>
+        </div>
+        <div class="aleftboxtbott">
+            <h2 class="tith2">全国感染新冠肺炎的死亡率</h2>
+            <!-- <div class="lefttoday_tit height"><p class="fl">状态：已调节.æl,kmo</p><p class="fr">时间段：2018-06-10 至 2018-06-14</p></div> -->
+            <div id="aleftboxtmidd" class="aleftboxtbott_cont2"></div>
+        </div>
+    </div>
+    <!--  left1 end -->
+    <div class="mrbox">
+        <div class="mrbox_topmidd" style="width: 69%;">
+            <div class="amiddboxttop">
+                <h2 class="tith2 pt1">湖北省迁入到各省市的人口占比——地理坐标系线图</h2>
+                <div class="hot_map" id="topmap">{{ myechart|safe }}</div>
+            </div>
+            <!--  amiddboxttop end-->
+            <div class="amidd_bott">
+                <div class="amiddboxtbott1 fl">
+                    <h2 class="tith2 pt1">二月全国每日新增确诊人数</h2>
+                    <div class="lefttoday_tit"><p class="fr">13号数据暂时缺失</p></div>
+                    <div id="amiddboxtbott1" class="amiddboxtbott1content2"></div>
+                </div>
+
+                <div class="amiddboxtbott2 fl"><h2 class="tith2 pt1">湖北迁入的人口比例与该省累计确诊人数的关系</h2>
+                    <div id="arightboxbott" class="amiddboxtbott2content"></div>
+                </div>
+            </div>
+            <!-- amidd_bott end -->
+        </div>
+        <!-- mrbox_top end -->
+        <div class="mrbox_top_right">
+            <div class="arightboxtop"><h2 class="tith2">广西各地市的累计确诊人数</h2>
+                <div id="aleftboxtbott" class="aleftboxtbott_contr"></div>
+            </div>
+            <div class="arightboxbott"><h2 class="tith2 ">全国各省市的累计确诊人数</h2>
+
+                <div id="aleftboxtmiddr" class="arightboxbottcont2"></div>
+            </div>
+        </div>
+        <!-- mrbox_top_right end -->
+    </div>
+</div>
+<!--死亡率——仪表盘-->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('aleftboxtmidd'));
+    option = {
+        color: ['#4d72d9', '#76c4bf', '#e5ffc7'],
+        backgroundColor: 'rgba(1,202,217,.2)',
+        grid: {
+            left: 60,
+            right: 60,
+            top: 20,
+            bottom: 0,
+            containLabel: true
+        },
+        calculable: true,
+        tooltip: {
+            show: true,
+            formatter: '{b}:{c}%',
+        },
+
+        series: [
+            {
+                name: '',
+                type: 'gauge',
+                max: 10,
+
+                detail: {
+                    formatter: '{{ gauge_data }}%',
+                    fontSize: 25,
+                    color: 'auto'
+                },
+                title: {
+                    color: '#fff',
+                },
+                data: [{value: {{ gauge_data }}, name: '死亡率'}]
+            }
+        ],
+    };
+    myChart.setOption(option);
+</script>
+<!--全国各省市的累计确诊人数——地图-->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('aleftboxtmiddr'));
+    option = {{ map_option|safe }}
+        myChart.setOption(option);
+</script>
+<!--广西各地市的累计确诊人数——柱形图-->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('aleftboxtbott'));
+    option = {
+        color: ['#7ecef4'],
+        backgroundColor: 'rgba(1,202,217,.2)',
+        grid: {
+            left: 20,
+            right: 50,
+            top: 23,
+            bottom: 30,
+            containLabel: true
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        xAxis: {
+            type: 'value',
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.2)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,0)'
+                }
+            },
+            axisLabel: {
+                color: "rgba(255,255,255,1)"
+            },
+            {#data: ['1000', '5000', '10000', '15000', '20000', '25000'],#}
+            boundaryGap: [0, 0.01]
+        },
+        yAxis: {
+            type: 'category',
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.5)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)'
+                }
+            },
+            axisLabel: {
+                color: "rgba(255,255,255,.5)"
+            },
+            data: {{ gx_city|safe }}
+        },
+        series: [
+            {
+                name: '',
+                type: 'bar',
+                barWidth: 29,
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            1, 0, 0, 1,
+                            [
+                                {offset: 0, color: 'rgba(230,253,139,.7)'},
+                                {offset: 1, color: 'rgba(41,220,205,.7)'}
+                            ]
+                        )
+                    }
+                },
+                data: {{ bar_confirmed_count_gx|safe }}
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+<!-- 全国每日新增——折线图 -->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('amiddboxtbott1'));
+    option = {
+        backgroundColor: 'rgba(1,202,217,.2)',
+        /* 设置画布大小 */
+        grid: {
+            left: 40,
+            right: 40,
+            top: 20,
+            bottom: 40
+        },
+        title: {
+            top: 5,
+            left: 20,
+            textStyle: {
+                fontSize: 10,
+                color: 'rgba(255,255,255,.6)'
+            },
+
+        },
+
+        {#设置鼠标定位#}
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: {{ confirmed_date }},
+
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.2)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)'
+                }
+            },
+            axisLabel: {
+                color: "rgba(255,255,255,.7)"
+            }
+        },
+        yAxis: {
+            type: 'value',
+
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.2)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)'
+                }
+            },
+            axisLabel: {
+                formatter: '{value}',
+                color: "rgba(255,255,255,.7)"
+            },
+            scale: true
+        },
+        series: [{
+            name: '确诊人数',
+            data: {{ confirmed_count }},
+            type: 'line',
+            markPoint: {
+                data: [
+                    {#{type: 'max', name: '最大值'},#}
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            },
+            /*
+            symbolSize: function (data) {
+                return Math.sqrt(data[2]) / 5e2;
+            },*/
+            {#鼠标停留事件#}
+            label: {
+                emphasis: {
+                    show: true,
+                    formatter: function (param) {
+                        return param.data;
+                    },
+                    position: 'top'
+                }
+            },
+            itemStyle: {
+                normal: {
+                    shadowBlur: 10,
+                    shadowColor: 'rgba(25, 100, 150, 0.5)',
+                    shadowOffsetY: 5,
+                    color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                        offset: 0,
+                        color: 'rgb(129, 227, 238)'
+                    }, {
+                        offset: 1,
+                        color: 'rgb(25, 183, 207)'
+                    }])
+                }
+            }
+        }]
+    };
+    myChart.setOption(option);
+</script>
+<!-- 广西每日新增——折线图 -->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('gx_confirmed'));
+    option = {
+        backgroundColor: 'rgba(1,202,217,.2)',
+        /* 设置画布大小 */
+        grid: {
+            left: 40,
+            right: 40,
+            top: 20,
+            bottom: 40
+        },
+        title: {
+            top: 5,
+            left: 20,
+            textStyle: {
+                fontSize: 10,
+                color: 'rgba(255,255,255,.6)'
+            },
+
+        },
+
+        {#设置鼠标定位#}
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: {{ line_date }},
+
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.2)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)'
+                }
+            },
+            axisLabel: {
+                color: "rgba(255,255,255,.7)"
+            }
+        },
+        yAxis: {
+            type: 'value',
+
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.2)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)'
+                }
+            },
+            axisLabel: {
+                formatter: '{value}',
+                color: "rgba(255,255,255,.7)"
+            },
+            scale: true
+        },
+        series: [{
+            name: '确诊人数',
+            data: {{ line_confirmed_count_gx }},
+            type: 'line',
+            markPoint: {
+                data: [
+                    {#{type: 'max', name: '最大值'},#}
+                    {#{type: 'min', name: '最小值'}#}
+                ]
+            },
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+            },
+            /*
+            symbolSize: function (data) {
+                return Math.sqrt(data[2]) / 5e2;
+            },*/
+            {#鼠标停留事件#}
+            label: {
+                emphasis: {
+                    show: true,
+                    formatter: function (param) {
+                        return param.data;
+                    },
+                    position: 'top'
+                }
+            },
+            itemStyle: {
+                normal: {
+                    shadowBlur: 10,
+                    shadowColor: 'rgba(25, 100, 150, 0.5)',
+                    shadowOffsetY: 5,
+                    color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                        offset: 0,
+                        color: 'rgb(129, 227, 238)'
+                    }, {
+                        offset: 1,
+                        color: 'rgb(25, 183, 207)'
+                    }])
+                }
+            }
+        }]
+    };
+    myChart.setOption(option);
+</script>
+<!--湖北迁入的人口比例与该省累计确诊人数的关系——散点图-->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('arightboxbott'));
+    option = {
+        color: ['#00ffff', '#7fd7b1', '#5578cf', '#5ebbeb', '#d16ad8', '#f8e19a', '#00b7ee', '#81dabe', '#5fc5ce'],
+        backgroundColor: 'rgba(1,202,217,.2)',
+
+        grid: {
+            left: '5%',
+            right: '8%',
+            bottom: '7%',
+            top: '8%',
+            containLabel: true
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        xAxis: {
+            type: 'value',
+            boundaryGap: false,
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.2)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)'
+                }
+            },
+            axisLabel: {
+                color: "rgba(255,255,255,.7)"
+            },
+            data: {{ scater_data_x }}
+        },
+        yAxis: {
+            type: 'value',
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.2)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)'
+                }
+            },
+            axisLabel: {
+                color: "rgba(255,255,255,.7)"
+            },
+        },
+        series: [
+            {
+                name: '',
+                type: 'scatter',
+                {#stack: '总量',#}
+                areaStyle: {normal: {}},
+                data:{{ scater_data_y }},
+            }
+
+        ]
+    };
+    myChart.setOption(option);
+</script>
+<!--广西各地市的累计确诊人数——饼图-->
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('gx_cc_pie'));
+    option = {
+        color: ['#f1b1ff', '#aae3fb', '#e5ffc7', '#ef1bfb', '#1fe3ff', '#c77aff', '#a7f34f'],
+        backgroundColor: 'rgba(1,202,217,.2)',
+        grid: {
+            left: 60,
+            right: 60,
+            top: 20,
+            bottom: 0,
+            containLabel: true
+        },
+        tooltip: {
+            target: 'axis'
+        },
+        calculable: true,
+        series: [
+            {
+                name: '',
+                type: 'pie',
+                radius : [30, 70],
+                {#center : ['50%', '55%'],#}
+                {#roseType : 'area',#}
+                data:{{ pie_data|safe }}
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+</body>
+</html>
