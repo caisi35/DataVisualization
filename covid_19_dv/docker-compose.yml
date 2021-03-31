@@ -1,0 +1,24 @@
+version: '2.0'
+
+services:
+
+  mysql:
+    image: mysql
+    restart: always
+    command: '--default-authentication-plugin=mysql_native_password'
+    volumes:
+      - ./data/:/docker-entrypoint-initdb.d/
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+
+  covid_dv:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    volumes:
+#      - .:/code
+    expose:
+      - 8001
+    links:
+      - mysql
