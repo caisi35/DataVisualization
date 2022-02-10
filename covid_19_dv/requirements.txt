@@ -1,6 +1,6 @@
 pyecharts_javascripthon==0.0.6
 pyecharts==0.5.11
-Django==2.2.13
+Django==2.2.27
 pymysql==0.9.3
 pyecharts-snapshot==0.2.0
 uwsgi
